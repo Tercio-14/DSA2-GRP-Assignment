@@ -1,0 +1,11 @@
+Data compression 
+
+We chose to combine LZ77 and Huffman coding for compression due to the complementary nature of their strengths, which collectively enable highly efficient data compression. LZ77 acts as a data detective, identifying repeating patterns within the input and referencing previously encountered segments to reduce redundancy. By storing references instead of repeating patterns, LZ77 effectively shrinks the data, making it more concise. Meanwhile, Huffman coding functions like a skilled wordsmith, assigning shorter representations to the most common patterns and longer ones to the less frequent ones. This variable-length prefix coding scheme significantly reduces the overall length of the message by encoding frequently occurring symbols with shorter codes. When these techniques are combined, LZ77 efficiently eliminates local redundancy by detecting and referencing repeated segments, while Huffman coding further reduces redundancy by assigning shorter codes to frequently occurring patterns across the entire dataset. This synergistic approach exploits both local and global redundancies, leading to highly effective compression that significantly reduces data size, improves storage efficiency, and facilitates efficient data transmission.
+
+Worst case time complexity of Deflate algorithm
+
+
+The worst-case time complexity of the Deflate algorithm is O(n^2), where n is the size of the input data. 
+This worst-case scenario primarily arises from the Huffman coding phase, particularly when all symbols have equal frequencies, leading to quadratic complexity in building the Huffman tree. However, in practice, efficient implementations of Huffman coding often achieve better performance, typically closer to linear time complexity or O(n log n).
+
+
